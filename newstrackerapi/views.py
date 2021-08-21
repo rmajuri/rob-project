@@ -1,11 +1,10 @@
-import json
-
 from django.shortcuts import render
 
 # Create your views here.
 # from rest_framework import viewsets
 #
 from .serializers import ArticleSerializer
+from django.shortcuts import get_object_or_404
 # from .models import Article
 #
 # class ArticleViewSet(viewsets.ModelViewSet):
@@ -29,12 +28,24 @@ class ArticleView(APIView):
 
     def post(self, request):
         article = request.data
-
         serializer = ArticleSerializer(data=article)
 
         if serializer.is_valid(raise_exception=True):
-            article_saved = serializer.save()
-
-        print('ARTICLE_CAT', article_saved)
+            serializer.save()
 
         return Response(serializer.data)
+
+    def put(self, request, pk):
+        saved_article = get_object_or_404(Article.objects.all(), pk=pk)
+        data = request.data
+        serializer = ArticleSerializer(instance=saved_article, data=data, partial=True)
+
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+
+        return Response(serializer.data)
+
+    def delete(self, request, pk):
+        article = get_object_or_404(Article.objects.all(), pk=pk)
+        article.delete()
+        return Response(status=204)
