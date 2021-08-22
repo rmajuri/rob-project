@@ -1,3 +1,5 @@
+import os
+from django.http import HttpResponse
 from .serializers import ArticleSerializer
 from .models import Article
 from rest_framework.views import APIView
@@ -7,6 +9,8 @@ import requests
 from tqdm import tqdm
 from bs4 import BeautifulSoup as bs
 from urllib.parse import urljoin, urlparse
+from django.views.generic import View
+from django.conf import settings
 
 
 class ArticleView(APIView):
@@ -61,7 +65,6 @@ class ArticleView(APIView):
             if link_urls:
                 article['image'] = link_urls[0]
 
-
         if serializer.is_valid(raise_exception=True):
             serializer.save()
 
@@ -82,3 +85,11 @@ class ArticleView(APIView):
         article.delete()
         return Response(status=204)
 
+
+class FrontendAppView(View):
+    def get(self, request):
+        try:
+            with open(os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')) as f:
+                return HttpResponse(f.read())
+        except FileNotFoundError:
+            return HttpResponse(status=501)
