@@ -5,7 +5,7 @@ from .models import Article
 class ArticleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Article
-        fields = ('id', 'name', 'link', 'description')
+        fields = ('id', 'name', 'link', 'description', 'image')
 
     def create(self, validated_data):
         return Article.objects.create(**validated_data)

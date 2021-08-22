@@ -3,9 +3,42 @@ from .models import Article
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+import requests
+from tqdm import tqdm
+from bs4 import BeautifulSoup as bs
+from urllib.parse import urljoin, urlparse
 
 
 class ArticleView(APIView):
+
+    def _is_valid(self, url):
+        """
+        Checks whether `url` is a valid URL.
+        """
+        parsed = urlparse(url)
+        return bool(parsed.netloc) and bool(parsed.scheme)
+
+    def _get_all_images(self, url):
+        """
+        Returns all image URLs on a single `url`
+        """
+        soup = bs(requests.get(url).content, "html.parser")
+
+        urls = []
+        for img in tqdm(soup.find_all("img"), "Extracting images"):
+            img_url = img.attrs.get("src")
+            if not img_url:
+                # if img does not contain src attribute, just skip
+                continue
+            img_url = urljoin(url, img_url)
+            try:
+                pos = img_url.index("?")
+                img_url = img_url[:pos]
+            except ValueError:
+                pass
+                if self._is_valid(img_url):
+                    urls.append(img_url)
+            return urls
 
     def get(self, request):
 
@@ -18,6 +51,16 @@ class ArticleView(APIView):
     def post(self, request):
         article = request.data
         serializer = ArticleSerializer(data=article)
+
+        if article.get('link'):
+            link_urls = []
+            try:
+                link_urls = self._get_all_images(article['link'])
+            except requests.exceptions.RequestException as err:
+                print(err)
+            if link_urls:
+                article['image'] = link_urls[0]
+
 
         if serializer.is_valid(raise_exception=True):
             serializer.save()
