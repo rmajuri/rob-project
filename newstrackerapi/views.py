@@ -114,3 +114,4 @@ class FrontendAppView(View):
         except FileNotFoundError as e:
             LOGGER.exception(e)
             return HttpResponse(status=501)
+

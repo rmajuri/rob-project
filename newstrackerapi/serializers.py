@@ -18,3 +18,4 @@ class ArticleSerializer(serializers.HyperlinkedModelSerializer):
         instance.save()
 
         return instance
+

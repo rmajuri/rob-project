@@ -8,4 +8,3 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^', views.FrontendAppView.as_view())
 ]
-
