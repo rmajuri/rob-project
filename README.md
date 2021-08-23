@@ -35,7 +35,7 @@ Django admin credentials for this project: `robmajuri / Crisprounds7`
 ### Frontend
 The frontend uses React JS, with an adherence to ES6 conventions. I used this because of my familiarity with it, along with the libraries [Material UI](https://material-ui.com/) for easy styling and [Formik](https://formik.org/) for easy form control and validation.
 
-Additionally, I used React because my conversations with GovExec thus far indicated that the company was interested in using React going forward. I wanted to demonstrate that I could be of help in this endeavor.
+Additionally, I used React to demonstrate that I could be of help to a team using this framework.
  
 ### Backend
 
