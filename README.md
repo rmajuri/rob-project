@@ -2,7 +2,7 @@
 
 This is a simple backend/frontend project that lets you GET, POST, UPDATE, and DELETE news articles that you curate from around the web.
 
-One 'article' consists of the following:
+One "article" consists of the following:
 
 * `name`: (str) Name that you give the article you save
 * `link`: (url) Link to the article
@@ -26,9 +26,9 @@ This will serve the React frontend project (found in the `frontend/build` folder
 
 APIs can be located at `http://127.0.0.1:8000/api/articles/`.
 
-Views are editable at `http://127.0.0.1:8000/admin/`
+Models are editable at `http://127.0.0.1:8000/admin/`.
 
-Django admin credentials for this project: `robmajuri / Crisprounds7`
+Django admin credentials for this project: `robmajuri / govexec12345`.
 
 ### Technologies used
 
@@ -58,6 +58,6 @@ It also wasn't clear to me when I set out using React for this project how I was
 ### Summary
 I'm thankful for the learning opportunities that this project offered. 
 
-###Extra 
+### Extra 
 
 The front end code can be found [here](https://github.com/rmajuri/rob-project-fe).
