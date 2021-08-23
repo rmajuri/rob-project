@@ -33,7 +33,9 @@ Django admin credentials for this project: `robmajuri / govexec12345`.
 ### Technologies used
 
 ### Frontend
-The frontend uses React JS, with an adherence to ES6 conventions. I used this because of my familiarity with it, along with the libraries [Material UI](https://material-ui.com/) for easy styling and [Formik](https://formik.org/) for easy form control and validation.
+The front end code can be found [here](https://github.com/rmajuri/rob-project-fe).
+
+The frontend uses React JS (bootstrapped with Create React App), with an adherence to ES6 conventions. I used this because of my familiarity with it, along with the libraries [Material UI](https://material-ui.com/) for easy styling and [Formik](https://formik.org/) for easy form control and validation.
 
 Additionally, I used React to demonstrate that I could be of help to a team using this framework.
  
@@ -58,6 +60,4 @@ It also wasn't clear to me when I set out using React for this project how I was
 ### Summary
 I'm thankful for the learning opportunities that this project offered. 
 
-### Extra 
 
-The front end code can be found [here](https://github.com/rmajuri/rob-project-fe).
