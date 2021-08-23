@@ -9,7 +9,7 @@ One 'article' consists of the following:
 * `description`: (str) Reason why you save the article
 * `image`: (url) Path to the image associated with the article (fetched by the server upon a POST request). Empty if no image is found.
 
-![FE screenshot](./fe.png)
+![FE screenshot](./FE.png)
 
 
 ### Running this project
@@ -33,7 +33,7 @@ Django admin credentials for this project: `robmajuri / Crisprounds7`
 ### Technologies used
 
 ### Frontend
-The frontend uses React JS, with an adherence to ES6 conventions. I used this because of my familiarity with it, along with the libraries [Material UI ](https://material-ui.com/) for easy styling and [Formik](https://formik.org/) for easy form control and validation.
+The frontend uses React JS, with an adherence to ES6 conventions. I used this because of my familiarity with it, along with the libraries [Material UI](https://material-ui.com/) for easy styling and [Formik](https://formik.org/) for easy form control and validation.
 
 Additionally, I used React because my conversations with GovExec thus far indicated that the company was interested in using React going forward. I wanted to demonstrate that I could be of help in this endeavor.
  
@@ -45,7 +45,9 @@ As prescribed, the backend uses Django Rest Framework for CRUD operations. It al
 
 With more time, I think that the project could benefit from improved logging, comments, and error handling. Additionally, UI/UX changes such as loading states while fetching could improve the user experience.
 
-Also, while the frontend validates URL input for the `link` attribute, the backend currently does not.
+While the frontend validates URL input for the `link` attribute, the backend currently does not.
+
+The project itself could use some gardening. It may still contain some unnecessary files and code that come for free with bootstrapping a Django project. It needs a `.gitignore` file.
 
 ### Things learned
 
@@ -55,3 +57,7 @@ It also wasn't clear to me when I set out using React for this project how I was
 
 ### Summary
 I'm thankful for the learning opportunities that this project offered. 
+
+###Extra 
+
+The front end code can be found [here](https://github.com/rmajuri/rob-project-fe).
