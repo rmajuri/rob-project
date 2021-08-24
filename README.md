@@ -14,12 +14,12 @@ One "article" consists of the following:
 
 ### Running this project
 1. Clone this repository
-2. Set the Python interpreter for this project as follows:
+2. Run `sh ./install.sh`
+3. Set the Python interpreter for this project as follows:
 
     ![Example for setting this project's interpreter](./example.png)
 
-3. Run `sh ./install.sh`
-4. `source venv/bin/activate`
+4. Run `source venv/bin/activate`
 5. Run `python manage.py runserver`
 
 This will serve the React frontend project (found in the `frontend/build` folder) at `http://127.0.0.1:8000/`.
@@ -49,7 +49,7 @@ With more time, I think that the project could benefit from improved logging, co
 
 While the frontend validates URL input for the `link` attribute, the backend currently does not.
 
-The project itself could use some gardening. It may still contain some unnecessary files and code that come for free with bootstrapping a Django project. It needs a `.gitignore` file.
+The project itself could use some gardening. It may still contain some unnecessary files and code that come for free with bootstrapping a Django project.
 
 ### Things learned
 
