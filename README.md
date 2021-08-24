@@ -16,11 +16,12 @@ One "article" consists of the following:
 1. Clone this repository
 2. Set the Python interpreter for this project as follows:
 
-![Example for setting this project's interpreter](./example.png)
+    ![Example for setting this project's interpreter](./example.png)
 
-3. run `source venv/bin/activate`
-4. run `pip install -r requirements.txt`
-5. Run `python manage.py runserver`
+3. run `sh ./install.sh`
+4. `source venv/bin/activate`
+5. run `pip install -r requirements.txt`
+6. Run `python manage.py runserver`
 
 This will serve the React frontend project (found in the `frontend/build` folder) at `http://127.0.0.1:8000/`.
 
