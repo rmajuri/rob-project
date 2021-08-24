@@ -18,10 +18,9 @@ One "article" consists of the following:
 
     ![Example for setting this project's interpreter](./example.png)
 
-3. run `sh ./install.sh`
+3. Run `sh ./install.sh`
 4. `source venv/bin/activate`
-5. run `pip install -r requirements.txt`
-6. Run `python manage.py runserver`
+5. Run `python manage.py runserver`
 
 This will serve the React frontend project (found in the `frontend/build` folder) at `http://127.0.0.1:8000/`.
 
