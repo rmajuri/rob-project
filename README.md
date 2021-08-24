@@ -1,5 +1,7 @@
 # Rob Majuri - Newstracker Project
 
+The frontend code for this project can be found [here](https://github.com/rmajuri/rob-project-fe).
+
 This is a simple backend/frontend project that lets you GET, POST, UPDATE, and DELETE news articles that you curate from around the web.
 
 One "article" consists of the following:
@@ -33,7 +35,6 @@ Django admin credentials for this project: `robmajuri / govexec12345`.
 ### Technologies used
 
 ### Frontend
-The front end code can be found [here](https://github.com/rmajuri/rob-project-fe).
 
 The frontend uses React JS (bootstrapped with Create React App), with an adherence to ES6 conventions. I used this because of my familiarity with it, along with the libraries [Material UI](https://material-ui.com/) for easy styling and [Formik](https://formik.org/) for easy form control and validation.
 
