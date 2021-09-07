@@ -29,7 +29,7 @@ echo "export PYTHONPATH=${DIR}/src" >> ${DIR}/venv/bin/activate
 pip install --upgrade pip
 for REQ_FILE in requirements.txt
 do
-    pip install -i https://pypi.urbn.com/root/public -r ${DIR}/${REQ_FILE}
+    pip install -r ${DIR}/${REQ_FILE}
     rc=$?
     if [[ ${rc} -ne 0 ]]; then
         >&2 echo "Failed to install ${REQ_FILE}"
